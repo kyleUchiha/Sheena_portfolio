@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+    --bg-color:#ffffff;
+    --text-main:#37352f;
+    --text-muted:#6b6a65;
+    --border-color:#edece9;
+    --card-bg:#fbfbfa;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Inter',sans-serif;
+    background:var(--bg-color);
+    color:var(--text-main);
+    line-height:1.6;
+    padding-bottom:60px;
+}
+
+.banner{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    object-position:center;
+    display:block;
+}
+
+.container{
+    max-width:1080px;
+    margin:auto;
+    padding:0 40px;
+    display:grid;
+    grid-template-columns:240px 1fr;
+    gap:40px;
+    margin-top:-40px;
+}
+
+.header-title{
+    grid-column:1/-1;
+    font-size:2.2rem;
+    font-weight:700;
+    background:#fff;
+    padding-top:20px;
+}
+
+.sidebar{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.profile-img{
+    width:160px;
+    height:160px;
+    border-radius:50%;
+    object-fit:cover;
+}
+
+.contact-list{
+    list-style:none;
+}
+
+.main-content{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+}
+
+.about-card,
+.section-card{
+    border:1px solid var(--border-color);
+    border-radius:8px;
+    padding:24px;
+}
+
+.portfolio-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:16px;
+}
+
+.grid-card{
+    border:1px solid var(--border-color);
+    border-radius:12px;
+    padding:24px;
+    text-decoration:none;
+    color:inherit;
+    text-align:center;
+    transition:.3s;
+}
+
+.grid-card:hover{
+    transform:translateY(-4px);
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.skills-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+}
+
+.skill-tag{
+    padding:8px 14px;
+    border-radius:20px;
+    border:1px solid var(--border-color);
+    background:var(--card-bg);
+}
+
+.project-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:15px;
+}
+
+.project-card{
+    border:1px solid var(--border-color);
+    border-radius:8px;
+    overflow:hidden;
+}
+
+.project-card img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.project-card .content{
+    padding:15px;
+}
+
+.timeline-item{
+    padding:15px 0;
+    border-bottom:1px solid var(--border-color);
+}
+
+.contact-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:15px;
+}
+
+@media(max-width:768px){
+    .container{
+        grid-template-columns:1fr;
+        padding:0 20px;
+    }
+
+    .sidebar{
+        align-items:center;
+        text-align:center;
+    }
+
+    .banner{
+        height:250px;
+    }
+   .awards-gallery{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.award-card{
+    width:120px;
+    height:90px;
+    border-radius:8px;
+    overflow:hidden;
+    border:1px solid var(--border-color);
+    transition:0.3s ease;
+}
+
+.award-card:hover{
+    transform:scale(1.05);
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+#awards .project-card img{
+    height:140px;      /* Smaller than project images */
+    object-fit:contain;
+    background:#f8f8f8;
+    padding:8px;
+}
+
+#awards .project-card a{
+    display:block;
+}
+}
+</style>
+</head>
+<body>
+
+<img src="tech.jpg" alt="Cover Photo" class="banner">
+
+<div class="container">
+
+<h1 class="header-title">Portfolio</h1>
+
+<aside class="sidebar">
+    <img src="sheena.jpg" alt="Profile" class="profile-img">
+
+    <div>
+        <h3>Contact</h3>
+        <ul class="contact-list">
+            <li>📞 09095700993</li>
+            <li>✉️ Fedillaga1@gmail@gmail.com</li>
+        </ul>
+    </div>
+</aside>
+
+<main class="main-content">
+
+<section class="about-card">
+<h2>📝 About</h2>
+<p>
+I am a motivated and curious individual with experience across academics,
+work, and personal projects.
+</p>
+</section>
+
+<nav class="portfolio-grid">
+<a href="#skills" class="grid-card">Skills</a>
+<a href="#projects" class="grid-card">Projects</a>
+<a href="#experience" class="grid-card">About Me</a>
+<a href="#awards" class="grid-card">Awards</a>
+<a href="#education" class="grid-card">Skills and Tools </a>
+<a href="#contact" class="grid-card">Contact</a>
+</nav>
+
+<section id="skills" class="section-card">
+<h2>💡 Skills</h2>
+<div class="skills-list">
+<span class="skill-tag">HTML</span>
+<span class="skill-tag">CSS</span>
+<span class="skill-tag">JavaScript</span>
+<span class="skill-tag">Responsive Design</span>
+<span class="skill-tag">UI Design</span>
+</div>
+</section>
+
+<section id="projects" class="section-card">
+<h2>🚀 Projects</h2>
+<div class="project-grid">
+<div class="project-card">
+<img src="rpl.jpg" alt="">
+<div class="content">
+<h3>READPLAYLEARN</h3>
+<p>Student App</p>
+</div>
+</div>
+
+<div class="project-card">
+<img src="adrpl.jpg">
+<div class="content">
+<h3>READPLAYLEARN</h3>
+<p>Teacher App</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="experience" class="section-card">
+<h2> About Me</h2>
+<div class="timeline-item">I am an aspiring web developer and Information Technology student with a passion for creating responsive and user-friendly websites. I enjoy learning new technologies, solving problems, and turning ideas into functional digital experiences. Through personal projects and continuous learning, I am developing my skills in 
+    web development, design, and programming while working toward a career in the technology industry.</div>
+    <h2>Education</h2>
+<div class="timeline-item">2021-2022 Maryknoll College of Panabo ICT
+</div>
+<div>2022-2026 Davao del Norte State College BSIT</div>
+</section>
+
+<section id="awards" class="section-card">
+    <h2>🏆 Awards & Certificates</h2>
+
+    <div class="project-grid">
+
+        <div class="project-card">
+            <a href="IT.png" target="_blank">
+                <img src="IT.png" alt="Certificate 1">
+            </a>
+            <div class="content">
+                <h3>IT Customer Support Basics</h3>
+                <p>2026</p>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <a href="pkt.png" target="_blank">
+                <img src="pkt.png" alt="Certificate 2">
+            </a>
+            <div class="content">
+                <h3>Getting Started Packet with Cisco Packet Tracer</h3>
+                <p>2024</p>
+            </div>
+        </div>
+
+       
+
+    </div>
+</section>
+
+<section id="education" class="section-card">
+<h2>🎓 Skill and Tools i Use </h2>
+<section id="skills" class="section-card">
+    
+
+    <h3 style="margin:20px 0 10px;">Skills</h3>
+    <div class="skills-list">
+        <span class="skill-tag">HTML5</span>
+        <span class="skill-tag">CSS3</span>
+        <span class="skill-tag">JavaScript</span>
+        <span class="skill-tag">Responsive Web Design</span>
+        <span class="skill-tag">UI/UX Design</span>
+        <span class="skill-tag">Problem Solving</span>
+        <span class="skill-tag">Team Collaboration</span>
+        <span class="skill-tag">Communication</span>
+    </div>
+
+    <h3 style="margin:25px 0 10px;">Tools & Technologies</h3>
+    <div class="skills-list">
+        <span class="skill-tag">Visual Studio Code</span>
+        <span class="skill-tag">Git</span>
+        <span class="skill-tag">GitHub</span>
+        <span class="skill-tag">Figma</span>
+        <span class="skill-tag">Canva</span>
+        <span class="skill-tag">Chrome DevTools</span>
+        <span class="skill-tag">Microsoft Office</span>
+        <span class="skill-tag">OneCompiler</span>
+    </div>
+</section>
+</section>
+
+<section id="contact" class="section-card">
+<h2>📞 Contact</h2>
+<div class="contact-grid">
+<div>Email:Fedillaga1@gmail.com</div>
+<div>Phone: 09095700993</div>
+<div>Location:Panabo City </div>
+</div>
+</section>
+
+</main>
+</div>
+
+</body>
+</html>
